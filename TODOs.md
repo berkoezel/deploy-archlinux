@@ -1,4 +1,5 @@
 -Set console font.
+
 -Ensure booted in UEFI mode.
 -Check the internet connection.
 -Set timezone.
