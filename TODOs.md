@@ -29,3 +29,5 @@
 -Configure/generate initramfs.
 
 -Adjust users/sudoers.
+
+-Install an AUR helper (Paru).
