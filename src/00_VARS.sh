@@ -11,7 +11,7 @@ export DEPLOYARCH_HOSTNAME='archlinux'
 export DEPLOYARCH_CHKPING_HOST='google.com'
 
 # Pacman mirror location
-export DEPLOYARCH_MIRROR_COUNTRY='Switzerland'
+export DEPLOYARCH_MIRROR_COUNTRY='CH' # Switzerland
 
 # Pacstrap packages
 export DEPLOYARCH_PACSTRAP_PKGS='base base-devel linux linux-firmware intel-ucode networkmanager'
