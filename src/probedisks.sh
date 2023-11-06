@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+. ./00_VARS.sh
+
 echo "WARNING: A \"WHOLE\" disk will be used for the installation."
 echo "Please choose a BLOCK DEVICE (not a partition) from the list below:"
 lsblk -fp
@@ -29,7 +31,7 @@ echo "Creating EFI partition..."
    echo p
    echo 
    echo
-   echo +512M
+   echo +${DEPLOYARCH_EFISIZE}
    echo w
 ) | fdisk ${BLKDEVICE}
 
@@ -39,7 +41,7 @@ echo "Creating /boot partition..."
    echo p
    echo
    echo
-   echo +512M
+   echo +${DEPLOYARCH_BOOTSIZE}
    echo w
 ) | fdisk ${BLKDEVICE}
 

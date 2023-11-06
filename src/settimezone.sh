@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-timedatectl set-timezone Etc/GMT+3
+. ./00_VARS.sh
+
+timedatectl set-timezone ${DEPLOYARCH_TIMEZONE} 
