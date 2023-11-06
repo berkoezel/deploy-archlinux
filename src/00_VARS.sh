@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # Swapfile generation
-export DEPLOYARCH_SWAPFILE_SIZE='8'
+export DEPLOYARCH_SWAPLOCATION='/swapfile'
+export DEPLOYARCH_SWAPFILE_SIZE='8' # In gigabytes 
 
 # Hostname configuration
 export DEPLOYARCH_HOSTNAME='archlinux'
