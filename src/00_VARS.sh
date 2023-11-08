@@ -27,4 +27,11 @@ export DEPLOYARCH_TIMEZONE=Etc/GMT+3
 export DEPLOYARCH_SYSTEM_USER='berk'
 
 # Services will enabled on the target installation
-export DEPLOYARCH_ENABLED_SVCS='NetworkManager lightdm'
+export DEPLOYARCH_ENABLED_SVCS='NetworkManager'
+
+# initrd - mkinitcpio variables
+export DEPLOYARCH_INITRD_MODULES='encrypt'
+export DEPLOYARCH_INITRD_HOOKS=''
+
+# GRUB variables
+export DEPLOYARCH_KERNEL_PARAMS='net.ifnames=0 fbcon=font:TER16x32'
