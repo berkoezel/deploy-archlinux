@@ -25,3 +25,6 @@ export DEPLOYARCH_TIMEZONE=Etc/GMT+3
 
 # Username
 export DEPLOYARCH_SYSTEM_USER='berk'
+
+# Services will enabled on the target installation
+export DEPLOYARCH_ENABLED_SVCS='NetworkManager lightdm'
