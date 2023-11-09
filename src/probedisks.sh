@@ -11,7 +11,7 @@ BLKDEVICE=$(echo ${BLKDEVICE} | cut -f 1 -d " ")
 CHKDEV=$(lsblk -dp | grep ${BLKDEVICE})
 
 while [ -z ${CHKDEV} ]; do
-   echo "You just entered wrong block device."
+   echo "You just entered a wrong block device."
    echo -n "Enter the selected block device: "
    read BLKDEVICE
 done

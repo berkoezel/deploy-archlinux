@@ -2,4 +2,4 @@
 
 . ./00_VARS.sh
 
-
+mkinitcpio -P
