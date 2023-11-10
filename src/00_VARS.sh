@@ -30,8 +30,7 @@ export DEPLOYARCH_SYSTEM_USER='berk'
 export DEPLOYARCH_ENABLED_SVCS='NetworkManager'
 
 # initrd - mkinitcpio variables
-export DEPLOYARCH_INITRD_MODULES='encrypt'
-export DEPLOYARCH_INITRD_HOOKS=''
+export DEPLOYARCH_INITRD_HOOKS='encrypt'
 
 # GRUB variables
 export DEPLOYARCH_KERNEL_PARAMS='net.ifnames=0 fbcon=font:TER16x32'
