@@ -58,3 +58,8 @@ mount -v /dev/mapper/mntroot /mnt
 mkdir /mnt/boot/efi -p
 mount -v ${EFIPART} /mnt/boot/efi
 mount -v ${BOOTPART} /mnt/boot
+
+mkdir -pv /mnt/chroot-scripts
+echo $EFIPART  > /mnt/chroot-scripts/PARTS
+echo $BOOTPART>> /mnt/chroot-scripts/PARTS
+echo $ROOTPART>> /mnt/chroot-scripts/PARTS
