@@ -16,44 +16,21 @@ while [ -z ${CHKDEV} ]; do
    read BLKDEVICE
 done
 
-echo "Altering the disk table..."
-dd if=/dev/zero of=${BLKDEVICE} bs=4096 count=1
+echo "Altering the disk tables and filesystem signatures..."
+wipefs --all --force ${BLKDEVICE}[1-9]*
+wipefs --all --force ${BLKDEVICE}
 
-echo "Creating GPT..."
-(
-   echo g
-   echo w
-) | fdisk ${BLKDEVICE}
+# Create a GPT on the disk:
+sgdisk -o ${BLKDEVICE}
 
-echo "Creating EFI partition..."
-(
-   echo n
-   echo p
-   echo 
-   echo
-   echo +${DEPLOYARCH_EFISIZE}
-   echo w
-) | fdisk ${BLKDEVICE}
+# Create the EFI partition:
+sgdisk -n 1:0:+${DEPLOYARCH_EFISIZE} ${BLKDEVICE}
 
-echo "Creating /boot partition..."
-(
-   echo n
-   echo p
-   echo
-   echo
-   echo +${DEPLOYARCH_BOOTSIZE}
-   echo w
-) | fdisk ${BLKDEVICE}
+# Create the /boot partition:
+sgdisk -n 2:0:+${DEPLOYARCH_BOOTSIZE} ${BLKDEVICE}
 
-echo "Creating root filesystem partition..."
-(
-   echo n
-   echo p
-   echo
-   echo
-   echo
-   echo w
-) | fdisk ${BLKDEVICE}
+# Create the / partition:
+sgdisk -n 3:0:0 ${BLKDEVICE}
 
 EFIPART=$(lsblk -lp ${BLKDEVICE} | grep part | awk "{ print $1 }" | awk NR==1)
 BOOTPART=$(lsblk -lp ${BLKDEVICE} | grep part | awk "{ print $1 }" | awk NR==2)
