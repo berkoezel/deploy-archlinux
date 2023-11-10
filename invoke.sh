@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
 set -e
-sudo su -
+if [ "$(whoami)" != "root" ]; then
+	echo "Please run this script as the root user."
+	exit 1
+fi
+
 DEPLOYARCH_DIR=$(pwd)
 
 cd src/
