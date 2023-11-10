@@ -32,9 +32,9 @@ sgdisk -n 2:0:+${DEPLOYARCH_BOOTSIZE} ${BLKDEVICE}
 # Create the / partition:
 sgdisk -n 3:0:0 ${BLKDEVICE}
 
-EFIPART=$(lsblk -lp ${BLKDEVICE} | grep part | awk "{ print $1 }" | awk NR==1)
-BOOTPART=$(lsblk -lp ${BLKDEVICE} | grep part | awk "{ print $1 }" | awk NR==2)
-ROOTPART=$(lsblk -lp ${BLKDEVICE} | grep part | awk "{ print $1 }" | awk NR==3)
+EFIPART=$(lsblk -lp ${BLKDEVICE} | grep part | awk '{ print $1 }' | awk NR==1)
+BOOTPART=$(lsblk -lp ${BLKDEVICE} | grep part | awk '{ print $1 }' | awk NR==2)
+ROOTPART=$(lsblk -lp ${BLKDEVICE} | grep part | awk '{ print $1 }' | awk NR==3)
 
 echo "Initializing cryptsetup..."
 cryptsetup -y -v luksFormat ${ROOTPART}
