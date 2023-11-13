@@ -2,4 +2,4 @@
 
 . ./00_VARS.sh
 
-hostnamectl set-hostname ${DEPLOYARCH_HOSTNAME}
+echo ${DEPLOYARCH_HOSTNAME} > /etc/hostname
