@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-pacman -S --needed base-devel
-git clone https://aur.archlinux.org/paru.git
+chmod 777 /chroot-scripts
+sudo -u berk git clone https://aur.archlinux.org/paru.git
 cd paru
-makepkg -si
+sudo -u berk makepkg -si
