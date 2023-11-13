@@ -14,7 +14,7 @@ export DEPLOYARCH_CHKPING_HOST='google.com'
 export DEPLOYARCH_MIRROR_COUNTRY='CH' # Switzerland
 
 # Pacstrap packages
-export DEPLOYARCH_PACSTRAP_PKGS='base base-devel linux linux-firmware intel-ucode networkmanager'
+export DEPLOYARCH_PACSTRAP_PKGS='base base-devel linux linux-firmware intel-ucode networkmanager less vim git'
 
 # Partition sizing
 export DEPLOYARCH_EFISIZE=512M
