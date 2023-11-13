@@ -2,5 +2,4 @@
 
 . ./00_VARS.sh
 
-timedatectl set-timezone ${DEPLOYARCH_TIMEZONE} 
-hwclock --systohc
+ln -sf /usr/share/zoneinfo/${DEPLOYARCH_TIMEZONE} /etc/localtime
