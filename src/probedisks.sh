@@ -55,9 +55,10 @@ mkfs.ext4 /dev/mapper/mntroot
 
 echo "Mounting filesystems..."
 mount -v /dev/mapper/mntroot /mnt
-mkdir /mnt/boot/efi -p
-mount -v ${EFIPART} /mnt/boot/efi
+mkdir /mnt/boot -v
 mount -v ${BOOTPART} /mnt/boot
+mkdir /mnt/boot/efi -v
+mount -v ${EFIPART} /mnt/boot/efi
 
 mkdir -pv /mnt/chroot-scripts
 echo $EFIPART  > /mnt/chroot-scripts/PARTS

@@ -2,4 +2,4 @@
 
 . ./00_VARS.sh
 
-systemctl enable ${DEPLOYARCH_ENABLE_SVCS}
+systemctl enable ${DEPLOYARCH_ENABLED_SVCS}
