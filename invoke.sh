@@ -19,4 +19,4 @@ cd src/
 
 cd ../
 cp -r ./* /mnt/chroot-scripts/ 
-arch-chroot /mnt /bin/bash -c "/mnt/chroot-scripts/chroot-handler.sh"
+arch-chroot /mnt /bin/bash -c "/chroot-scripts/chroot-handler.sh"
