@@ -6,8 +6,6 @@ if [ "$(whoami)" != "root" ]; then
 	exit 1
 fi
 
-DEPLOYARCH_DIR=$(pwd)
-
 cd src/
 
 ./set-consfont.sh
@@ -18,3 +16,7 @@ cd src/
 ./set-mirrors.sh
 ./pacstrap.sh
 ./set-fstab.sh
+
+cd ../
+cp -r ./* /mnt/chroot-scripts/ 
+arch-chroot /mnt /bin/bash -c "/mnt/chroot-scripts/chroot-handler.sh"
