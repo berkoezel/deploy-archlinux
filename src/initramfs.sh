@@ -2,5 +2,6 @@
 
 . ./00_VARS.sh
 
-sed -i "s/consolefont block/consolefont ${DEPLOYARCH_INITRD_HOOKS} block/" /etc/mkinitcpio.conf 
-mkinitcpio -P
+sed -i "s/autodetect/autodetect keyboard keymap /" /etc/mkinitcpio.conf
+sed -i "s/consolefont block/consolefont block encrypt /" /etc/mkinitcpio.conf 
+mkinitcpio -p linux
