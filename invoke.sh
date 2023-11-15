@@ -10,12 +10,11 @@ DEPLOYARCH_DIR=$(pwd)
 
 cd src/
 
-./setconfonts.sh
+./set-consfont.sh
 ./verifyuefi.sh
-./checkconn.sh
-./settimezone.sh
-./probedisks.sh
-./conf-mirrors.sh
+./checckconn.sh
+./set-timezone.sh
+./set-disks.sh
+./set-mirrors.sh
 ./pacstrap.sh
-./setfstab.sh
-
+./set-fstab.sh
