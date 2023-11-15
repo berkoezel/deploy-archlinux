@@ -11,7 +11,7 @@ ROOTDISK_UUID=$(head -n3 /chroot-scripts/PARTS | tail -1 | xargs blkid | awk '{p
 echo ${ROOTDISK_UUID}
 
 echo "" >> /etc/default/grub
-echo "CMDLINE_LINUX_DEFAULT=${DEPLOYARCH_KERNEL_PARAMS} cryptdevice=${ROOTDISK_UUID}:cr_root root=/dev/mapper/cr_root" >> /etc/default/grub
+echo "GRUB_CMDLINE_LINUX_DEFAULT=cryptdevice=${ROOTDISK_UUID}:cr_root root=/dev/mapper/cr_root ${DEPLOYARCH_KERNEL_PARAMS}" >> /etc/default/grub
 
 grub-install --target=x86_64-efi --boot-directory=/boot --efi-directory=/boot/efi
 grub-mkconfig -o /boot/grub/grub.cfg
