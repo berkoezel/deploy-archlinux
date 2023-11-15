@@ -10,7 +10,7 @@ cd src/
 
 ./set-consfont.sh
 ./verifyuefi.sh
-./checckconn.sh
+./checkconn.sh
 ./set-timezone.sh
 ./set-disks.sh
 ./set-mirrors.sh
